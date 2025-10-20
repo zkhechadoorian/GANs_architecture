@@ -23,6 +23,48 @@ The GAN section focuses on the pix2pix conditional GAN for image-to-image transl
 
 Autoencoders are powerful for efficient data compression, image quality enhancement, and anomaly detection. The autoencoder in this project learns how to compress and reconstruct images from the MNIST dataset, which could be scaled up to reduce storage costs for large-scale image datasets. The denoising autoencoder can be applied to cleaning up noisy input datasets in a variety of applications. The anomaly autoencoder can be used for real time monitoring in clinical settings to support early diagnosis and risk management for patients.
 
+## 📝 Project Overview
+
+This repository demonstrates the power of generative models through hands-on experiments with **Autoencoders** and **Generative Adversarial Networks (GANs)**. The project covers a range of applications, from image compression and denoising to anomaly detection and image-to-image translation.
+
+### Autoencoders
+
+Autoencoders are neural networks that learn to compress data into a lower-dimensional latent space and then reconstruct the original input. This project explores three main autoencoder applications:
+
+#### 1. MNIST Encode/Decode
+- **Description:** Compress and reconstruct handwritten digit images from the MNIST dataset.
+- **Visualization:**
+    ![MNIST Encode/Decode 1](assets/mnist_diff_heatmaps.png)
+    ![MNIST Encode/Decode 2](assets/mnist_latent_analysis.png)
+
+#### 2. Flower Image Denoising
+- **Description:** Remove noise from flower images using a convolutional autoencoder.
+- **Visualization:**
+  - *Noisy vs. Denoised Images*
+    ![Flower Denoising 1](assets/flowers_results.png)
+
+#### 3. ECG Anomaly Detection
+- **Description:** Detect abnormal heartbeats by training an autoencoder on normal ECG signals and flagging high reconstruction errors.
+- **Visualization:**
+  - *Normal vs. Anomalous Reconstructions*
+    ![ECG Anomaly 1](assets/ecg_anomaly_1.png)
+    ![ECG Anomaly 2](assets/ecg_anomaly_2.png)
+
+### Generative Adversarial Networks (GANs)
+
+GANs consist of a generator and a discriminator competing in a zero-sum game. This project implements the **pix2pix** conditional GAN for image-to-image translation.
+
+#### GANs Architecture & Results
+- **Description:** Translate label images to realistic building facades using paired datasets.
+- **Visualization:**
+  - *GAN Architecture Diagram*
+    ![GAN Architecture 1](assets/gans_architecture_1.png)
+    ![GAN Architecture 2](assets/gans_architecture_2.png)
+
+---
+
+*Replace the image placeholders above with your own
+
 ## 📂 Folder Structure
 
 ```
