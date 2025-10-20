@@ -19,6 +19,9 @@ The GAN section focuses on the pix2pix conditional GAN for image-to-image transl
 - **PatchGAN Discriminator**: Classifies image patches for realistic outputs.
 - **Applications**: Label-to-photo translation, colorization, style transfer, and more.
 
+## 💡 Business Value of Autoencoders & GANs
+
+Autoencoders are powerful for efficient data compression, image quality enhancement, and anomaly detection. The autoencoder in this project learns how to compress and reconstruct images from the MNIST dataset, which could be scaled up to reduce storage costs for large-scale image datasets. The denoising autoencoder can be applied to cleaning up noisy input datasets in a variety of applications. The anomaly autoencoder can be used for real time monitoring in clinical settings to support early diagnosis and risk management for patients.
 
 ## 📂 Folder Structure
 
@@ -53,16 +56,44 @@ Follow each cell carefully to understand the GANs archeticture.
 
 To practically implement and understand AutoEncoders and GANs, follow the instructions in the [Step By Step](./step_by_step.md) file.
 
-## 📊 Model Performance Results
+### 🧬 Autoencoder Notebook 
 
-### Autoencoders
-
+This notebook demonstrates a basic autoencoder architecture applied to the MNIST dataset. The autoencoder consists of an **encoder** that compresses input images into a low-dimensional latent space, and a **decoder** that reconstructs the images from these compressed representations.
 For autoencoders, model performance is primarily evaluated using:
-
 - **Reconstruction Loss**: Measures how well the output matches the input. Common metrics include:
 	- Mean Squared Error (MSE): Used for image reconstruction and denoising tasks.
 	- Mean Absolute Error (MAE): Sometimes used for anomaly detection.
 - **Anomaly Detection**: In the ECG example, reconstruction error (MSE) is used to flag abnormal signals.
+
+### Key Steps
+
+1. **Load and Preprocess MNIST Data**
+   - Visualize sample images from the dataset.
+   ![Alt text](assets/mnist_sample_images.png)
+	*Sample MNIST images.*
+2. **Build the Autoencoder Model**
+   - Define the encoder and decoder using dense layers.
+   - Compile and train the model on MNIST images.
+
+3. **Latent Space Analysis**
+   - Project images into the latent space.
+   - Visualize the distribution of latent vectors.
+   ![Alt text](assets/mnist_latent_correlation.png)
+    *Correlation matrix in latent space between digit classes.*
+4. **Reconstruction and Difference Analysis**
+   - Compare original and reconstructed images.
+   - Visualize the difference between input and output.
+   ![Alt text](assets/mnist_reconstruction_differences.png)
+   * Original images (row 1) followed by their reconstructions, difference heatmaps (row 2), and difference histograms (row 3). Bright spots on heatmaps indicate regions with the lowest reconstruction quality. Difference histograms show distribution of pixel-wise differences between original and reconstructed images.
+5. **Evaluate Performance**
+   - Plot reconstruction loss curves.
+   - Discuss results and limitations.
+   ![Alt text](assets/mnist_training_curves.png)
+
+---
+
+*Replace the placeholders above with your own images and analysis
+
 
 ### GANs (pix2pix)
 
